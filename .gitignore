@@ -3,6 +3,7 @@
 # ========================================
 .vscode/
 .idea/
+.claude/
 .DS_Store
 Thumbs.db
 *.swp
@@ -10,4 +11,4 @@ Thumbs.db
 # ========================================
 # Design Specs and Notes
 # ========================================
-design/*
+design/
