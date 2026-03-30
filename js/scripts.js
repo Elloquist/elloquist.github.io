@@ -12,6 +12,10 @@
 (function () {
   'use strict';
 
+  // Signal to CSS that JS is running — fade-in styles only activate with this class.
+  // Without it (JS blocked/failed), all content is visible by default.
+  document.documentElement.classList.add('js-animations-enabled');
+
   /* --------------------------------------------------------------------------
      Scroll-triggered fade-in
      Elements with class "fade-in" animate in when they enter the viewport.
