@@ -1,0 +1,481 @@
+/**
+ * Elloquist Design System - Complete CSS Export
+ * Version 1.0 - March 2026
+ * 
+ * This file contains all typography, colors, spacing, and component styles
+ * for the Elloquist brand identity system.
+ */
+
+/* ============================================================================
+   FONT IMPORTS
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;300italic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500&display=swap');
+
+/* ============================================================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ============================================================================ */
+
+:root {
+  /* Brand Colors - Core Palette */
+  --elloquist-botanical-green: #2C5F2E;
+  --elloquist-deep-forest: #1A3A1A;
+  --elloquist-rich-gold: #8B6914;      /* Use only on light backgrounds */
+  --elloquist-pale-gold: #F0C84A;      /* Use only on dark backgrounds */
+  --elloquist-cream: #F8F5EF;
+  --elloquist-sage: #EAF2EA;
+  --elloquist-white: #FFFFFF;
+  --elloquist-charcoal: #2D2D2D;
+  
+  /* Typography - Font Families */
+  --elloquist-font-display: 'Cormorant Garamond', serif;
+  --elloquist-font-headline: 'Fraunces', serif;
+  --elloquist-font-body: 'Arial', sans-serif;
+
+  /* Typography - Font Sizes */
+  --elloquist-text-display-xl: 64px;
+  --elloquist-text-display-lg: 48px;
+  --elloquist-text-display-md: 36px;
+  --elloquist-text-display-sm: 28px;
+  --elloquist-text-tagline: 24px;
+  --elloquist-text-pull-quote: 32px;
+  --elloquist-text-body: 16px;
+  --elloquist-text-body-small: 14px;
+  --elloquist-text-caption: 12px;
+  --elloquist-text-label: 14px;
+
+  /* Typography - Font Weights */
+  --elloquist-weight-light: 300;
+  --elloquist-weight-regular: 400;
+  --elloquist-weight-medium: 500;
+
+  /* Typography - Letter Spacing */
+  --elloquist-spacing-display-xl: 0.04em;
+  --elloquist-spacing-display-lg: 0.02em;
+  --elloquist-spacing-display-md: 0.01em;
+  --elloquist-spacing-display-sm: 0.008em;
+  --elloquist-spacing-tagline: 0.08em;
+  --elloquist-spacing-pull-quote: 0.02em;
+  --elloquist-spacing-logo: 0.15em;
+  --elloquist-spacing-caption: 0.01em;
+  --elloquist-spacing-label: 0.02em;
+  --elloquist-spacing-none: 0;
+
+  /* Spacing System - 8px Grid */
+  --elloquist-space-xs: 4px;
+  --elloquist-space-sm: 8px;
+  --elloquist-space-md: 16px;
+  --elloquist-space-lg: 24px;
+  --elloquist-space-xl: 32px;
+  --elloquist-space-2xl: 48px;
+  --elloquist-space-3xl: 64px;
+  --elloquist-space-4xl: 96px;
+
+  /* Border Radius */
+  --elloquist-radius-sm: 2px;
+  --elloquist-radius-md: 4px;
+  --elloquist-radius-lg: 8px;
+  --elloquist-radius-full: 9999px;
+
+  /* Transitions */
+  --elloquist-transition-fast: 150ms;
+  --elloquist-transition-base: 200ms;
+  --elloquist-transition-slow: 300ms;
+}
+
+/* ============================================================================
+   TYPOGRAPHY CLASSES
+   ============================================================================ */
+
+/* Display Extra Large - Cormorant Garamond */
+.elloquist-display-xl {
+  font-family: var(--elloquist-font-display);
+  font-size: var(--elloquist-text-display-xl);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-display-xl);
+  text-transform: capitalize;
+  line-height: 1.2;
+  color: var(--elloquist-deep-forest);
+}
+
+/* Display Large - Fraunces */
+.elloquist-display-lg {
+  font-family: var(--elloquist-font-headline);
+  font-size: var(--elloquist-text-display-lg);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-display-lg);
+  text-transform: capitalize;
+  line-height: 1.2;
+  color: var(--elloquist-deep-forest);
+}
+
+/* Display Medium - Fraunces */
+.elloquist-display-md {
+  font-family: var(--elloquist-font-headline);
+  font-size: var(--elloquist-text-display-md);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-display-md);
+  text-transform: capitalize;
+  line-height: 1.2;
+  color: var(--elloquist-deep-forest);
+}
+
+/* Display Small - Fraunces */
+.elloquist-display-sm {
+  font-family: var(--elloquist-font-headline);
+  font-size: var(--elloquist-text-display-sm);
+  font-weight: var(--elloquist-weight-light);
+  letter-spacing: var(--elloquist-spacing-display-sm);
+  text-transform: capitalize;
+  line-height: 1.2;
+  color: var(--elloquist-deep-forest);
+}
+
+/* Tagline - Cormorant Garamond Light, All Caps */
+.elloquist-tagline {
+  font-family: var(--elloquist-font-display);
+  font-size: var(--elloquist-text-tagline);
+  font-weight: var(--elloquist-weight-light);
+  letter-spacing: var(--elloquist-spacing-tagline);
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--elloquist-rich-gold);
+}
+
+/* Pull Quote - Cormorant Garamond Light Italic */
+.elloquist-pull-quote {
+  font-family: var(--elloquist-font-display);
+  font-size: var(--elloquist-text-pull-quote);
+  font-weight: var(--elloquist-weight-light);
+  font-style: italic;
+  letter-spacing: var(--elloquist-spacing-pull-quote);
+  line-height: 1.5;
+  color: var(--elloquist-botanical-green);
+}
+
+/* Body Text - Arial Regular */
+.elloquist-body {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-none);
+  line-height: 1.6;
+  color: var(--elloquist-charcoal);
+}
+
+/* Body Small - Arial Regular */
+.elloquist-body-small {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body-small);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-none);
+  line-height: 1.6;
+  color: var(--elloquist-charcoal);
+}
+
+/* Caption - Arial Regular */
+.elloquist-caption {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-caption);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-caption);
+  line-height: 1.5;
+  color: #6B7280;
+}
+
+/* Label - Arial Regular, Uppercase */
+.elloquist-label {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-label);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-label);
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--elloquist-charcoal);
+}
+
+/* Logo/Wordmark Style */
+.elloquist-logo {
+  font-family: var(--elloquist-font-display);
+  font-weight: var(--elloquist-weight-light);
+  letter-spacing: var(--elloquist-spacing-logo);
+  text-transform: uppercase;
+  color: var(--elloquist-botanical-green);
+}
+
+.elloquist-logo .q-accent {
+  color: var(--elloquist-rich-gold);
+}
+
+/* ============================================================================
+   COMPONENT CLASSES
+   ============================================================================ */
+
+/* Button Variants */
+.elloquist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--elloquist-space-lg) var(--elloquist-space-xl);
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body-small);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-label);
+  text-transform: uppercase;
+  border-radius: var(--elloquist-radius-md);
+  cursor: pointer;
+  transition: all var(--elloquist-transition-base) ease;
+  border: none;
+}
+
+.elloquist-btn-primary {
+  background-color: var(--elloquist-botanical-green);
+  color: var(--elloquist-white);
+}
+
+.elloquist-btn-primary:hover {
+  background-color: var(--elloquist-deep-forest);
+}
+
+.elloquist-btn-secondary {
+  background-color: transparent;
+  color: var(--elloquist-botanical-green);
+  border: 1px solid var(--elloquist-botanical-green);
+}
+
+.elloquist-btn-secondary:hover {
+  background-color: var(--elloquist-cream);
+}
+
+.elloquist-btn-premium {
+  background-color: var(--elloquist-rich-gold);
+  color: var(--elloquist-white);
+}
+
+.elloquist-btn-premium:hover {
+  background-color: #6d5310;
+}
+
+/* Card Components */
+.elloquist-card {
+  padding: var(--elloquist-space-lg);
+  border-radius: var(--elloquist-radius-md);
+  border: 1px solid var(--elloquist-sage);
+}
+
+.elloquist-card-cream {
+  background-color: var(--elloquist-cream);
+}
+
+.elloquist-card-white {
+  background-color: var(--elloquist-white);
+}
+
+.elloquist-card-title {
+  font-family: var(--elloquist-font-headline);
+  font-size: 24px;
+  font-weight: var(--elloquist-weight-regular);
+  color: var(--elloquist-deep-forest);
+  margin-bottom: var(--elloquist-space-md);
+}
+
+/* Badge Components */
+.elloquist-badge {
+  display: inline-block;
+  padding: var(--elloquist-space-xs) var(--elloquist-space-md);
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-caption);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-label);
+  text-transform: uppercase;
+  border-radius: var(--elloquist-radius-md);
+}
+
+.elloquist-badge-premium {
+  background-color: var(--elloquist-rich-gold);
+  color: var(--elloquist-white);
+}
+
+.elloquist-badge-premium-dark {
+  background-color: var(--elloquist-pale-gold);
+  color: var(--elloquist-deep-forest);
+}
+
+/* Divider Components */
+.elloquist-divider {
+  width: 100%;
+  border: none;
+  margin: 0;
+}
+
+.elloquist-divider-standard {
+  height: 1px;
+  background-color: var(--elloquist-sage);
+}
+
+.elloquist-divider-brand-light {
+  height: 2px;
+  background-color: var(--elloquist-rich-gold);
+}
+
+.elloquist-divider-brand-dark {
+  height: 2px;
+  background-color: var(--elloquist-pale-gold);
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+/* Color Utilities */
+.elloquist-text-green { color: var(--elloquist-botanical-green); }
+.elloquist-text-forest { color: var(--elloquist-deep-forest); }
+.elloquist-text-rich-gold { color: var(--elloquist-rich-gold); }
+.elloquist-text-pale-gold { color: var(--elloquist-pale-gold); }
+.elloquist-text-charcoal { color: var(--elloquist-charcoal); }
+
+.elloquist-bg-cream { background-color: var(--elloquist-cream); }
+.elloquist-bg-sage { background-color: var(--elloquist-sage); }
+.elloquist-bg-white { background-color: var(--elloquist-white); }
+.elloquist-bg-green { background-color: var(--elloquist-botanical-green); }
+.elloquist-bg-forest { background-color: var(--elloquist-deep-forest); }
+
+/* ============================================================================
+   LOGO VARIATIONS (FOR HTML/CSS IMPLEMENTATION)
+   ============================================================================ */
+
+/* Primary Logo - Cream Background */
+.elloquist-logo-primary {
+  background-color: var(--elloquist-cream);
+  padding: var(--elloquist-space-xl);
+}
+
+.elloquist-logo-primary .elloquist-wordmark {
+  color: var(--elloquist-botanical-green);
+}
+
+.elloquist-logo-primary .elloquist-q-accent {
+  color: var(--elloquist-rich-gold);
+}
+
+/* Reverse Logo - Green Background */
+.elloquist-logo-reverse {
+  background-color: var(--elloquist-botanical-green);
+  padding: var(--elloquist-space-xl);
+}
+
+.elloquist-logo-reverse .elloquist-wordmark {
+  color: var(--elloquist-white);
+}
+
+.elloquist-logo-reverse .elloquist-q-accent {
+  color: var(--elloquist-pale-gold);
+}
+
+/* Dark Logo - White Background */
+.elloquist-logo-dark {
+  background-color: var(--elloquist-white);
+  padding: var(--elloquist-space-xl);
+}
+
+.elloquist-logo-dark .elloquist-wordmark {
+  color: var(--elloquist-charcoal);
+}
+
+.elloquist-logo-dark .elloquist-q-accent {
+  color: var(--elloquist-rich-gold);
+}
+
+/* Premium Logo - Deep Forest Background */
+.elloquist-logo-premium {
+  background-color: var(--elloquist-deep-forest);
+  padding: var(--elloquist-space-xl);
+}
+
+.elloquist-logo-premium .elloquist-wordmark {
+  color: var(--elloquist-pale-gold);
+}
+
+.elloquist-logo-premium .elloquist-q-accent {
+  color: var(--elloquist-pale-gold);
+}
+
+/* ============================================================================
+   WCAG ACCESSIBILITY COMPLIANCE
+   ============================================================================ */
+
+/*
+ * All color combinations meet WCAG 2.1 Level AA minimum requirements:
+ * 
+ * - Botanical Green #2C5F2E on Cream #F8F5EF: 6.93:1 (AA)
+ * - Rich Gold #8B6914 on Cream #F8F5EF: 4.67:1 (AA)
+ * - Rich Gold #8B6914 on White #FFFFFF: 5.09:1 (AA)
+ * - White #FFFFFF on Botanical Green #2C5F2E: 7.54:1 (AAA)
+ * - Pale Gold #F0C84A on Botanical Green #2C5F2E: 4.69:1 (AA)
+ * - Pale Gold #F0C84A on Deep Forest #1A3A1A: 7.85:1 (AAA)
+ * - Charcoal #2D2D2D on Cream #F8F5EF: 12.66:1 (AAA)
+ */
+
+/* ============================================================================
+   DESIGN RULES & RESTRICTIONS
+   ============================================================================ */
+
+/*
+ * CRITICAL: THE TWO-GOLD SYSTEM
+ * ==============================
+ * - Rich Gold (#8B6914) ONLY on light backgrounds (Cream, White)
+ * - Pale Gold (#F0C84A) ONLY on dark backgrounds (Green, Forest, Charcoal)
+ * - NEVER swap these golds - Rich Gold on dark backgrounds fails accessibility
+ * 
+ * TYPOGRAPHY HIERARCHY
+ * ====================
+ * - Cormorant Garamond → elegance, precision, the brand mark
+ * - Fraunces → warmth, personality, content headlines
+ * - Arial → clarity, legibility, functional text
+ * - Never mix Cormorant Garamond and Fraunces at similar sizes
+ * 
+ * LOGO INTEGRITY
+ * ==============
+ * - Never distort, stretch, or condense the wordmark
+ * - Never use any font other than Cormorant Garamond Light 300
+ * - Never change the Q accent to a different letter
+ * - Never use more than one gold accent letter
+ * - Never reduce letter spacing below 0.15em (150) in the wordmark
+ * - Never apply drop shadows, gradients, or outlines to the logo
+ * 
+ * SPACING SYSTEM
+ * ==============
+ * - Use 8px base grid for all spacing decisions
+ * - Available tokens: 4px, 8px, 16px, 24px, 32px, 48px, 64px, 96px
+ */
+
+/* ============================================================================
+   RESPONSIVE TYPOGRAPHY (OPTIONAL)
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --elloquist-text-display-xl: 48px;
+    --elloquist-text-display-lg: 36px;
+    --elloquist-text-display-md: 28px;
+    --elloquist-text-display-sm: 24px;
+    --elloquist-text-tagline: 18px;
+    --elloquist-text-pull-quote: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --elloquist-text-display-xl: 36px;
+    --elloquist-text-display-lg: 28px;
+    --elloquist-text-display-md: 24px;
+    --elloquist-text-display-sm: 20px;
+    --elloquist-text-tagline: 16px;
+    --elloquist-text-pull-quote: 20px;
+  }
+}
+
+/* ============================================================================
+   END OF ELLOQUIST DESIGN SYSTEM CSS
+   ============================================================================ */
