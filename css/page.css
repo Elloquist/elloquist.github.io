@@ -1,0 +1,604 @@
+/**
+ * Elloquist — Page Layout CSS
+ * Version 1.0 - March 2026
+ *
+ * Page-level layout, section structure, dark mode, focus styles, and
+ * scroll animations. Design tokens live in elloquist-design-system.css.
+ */
+
+/* ============================================================================
+   SEMANTIC PAGE TOKENS
+   Light mode defaults. Remapped in prefers-color-scheme: dark below.
+   ============================================================================ */
+
+:root {
+  --page-bg:           var(--elloquist-cream);
+  --page-bg-alt:       var(--elloquist-sage);
+  --page-surface:      var(--elloquist-white);
+  --page-text:         var(--elloquist-charcoal);
+  --page-heading:      var(--elloquist-deep-forest);
+  --page-accent:       var(--elloquist-rich-gold);
+  --page-border:       var(--elloquist-sage);
+  --page-nav-bg:       var(--elloquist-cream);
+  --page-nav-text:     var(--elloquist-botanical-green);
+  --page-nav-border:   var(--elloquist-sage);
+
+  /* Hero wordmark SVG — primary variation (light bg)
+     In dark mode these remap to reverse/white variation below. */
+  --hero-wordmark-color: var(--elloquist-botanical-green);
+  --hero-q-color:        var(--elloquist-rich-gold);
+  --hero-accent-color:   var(--elloquist-rich-gold);
+}
+
+/* ============================================================================
+   GLOBAL RESET & BASE
+   ============================================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--page-bg);
+  color: var(--page-text);
+  transition:
+    background-color var(--elloquist-transition-slow),
+    color var(--elloquist-transition-slow);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================================
+   FOCUS STYLES  (WCAG 2.1 SC 2.4.7 — Focus Visible, SC 2.4.11 — Focus Appearance)
+   ============================================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--page-accent);
+  outline-offset: 3px;
+  border-radius: var(--elloquist-radius-sm);
+}
+
+/* ============================================================================
+   SKIP LINK  (WCAG 2.1 SC 2.4.1 — Bypass Blocks)
+   ============================================================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--elloquist-space-md);
+  z-index: 9999;
+  padding: var(--elloquist-space-sm) var(--elloquist-space-md);
+  background-color: var(--elloquist-botanical-green);
+  color: var(--elloquist-white);
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body-small);
+  font-weight: var(--elloquist-weight-medium);
+  text-decoration: none;
+  border-radius: var(--elloquist-radius-md);
+  transition: top var(--elloquist-transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--elloquist-space-md);
+}
+
+/* ============================================================================
+   LAYOUT
+   ============================================================================ */
+
+.section-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--elloquist-space-xl);
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 var(--elloquist-space-md);
+  }
+}
+
+/* ============================================================================
+   SITE HEADER
+   ============================================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--page-nav-bg);
+  border-bottom: 1px solid var(--page-nav-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.site-header__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--elloquist-space-md) var(--elloquist-space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--elloquist-space-xl);
+}
+
+.site-header__logo-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__monogram {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* ensures crisp circle clip if any sub-pixel bleed */
+}
+
+/* ============================================================================
+   NAVIGATION
+   ============================================================================ */
+
+.site-nav__list {
+  display: flex;
+  gap: var(--elloquist-space-xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav__link {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body-small);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--page-nav-text);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color var(--elloquist-transition-base), border-color var(--elloquist-transition-base);
+}
+
+.site-nav__link:hover,
+.site-nav__link[aria-current="page"] {
+  color: var(--page-accent);
+  border-bottom-color: var(--page-accent);
+}
+
+@media (max-width: 768px) {
+  .site-header__inner {
+    padding: var(--elloquist-space-md);
+    flex-direction: column;
+    gap: var(--elloquist-space-sm);
+  }
+
+  .site-nav__list {
+    gap: var(--elloquist-space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero-section {
+  padding: var(--elloquist-space-4xl) 0;
+  background-color: var(--page-bg);
+  text-align: center;
+}
+
+.hero-section .section-container {
+  max-width: 780px;
+}
+
+/* Wordmark SVG — fills the hero container width, scales proportionally on mobile */
+.hero-section__logo-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto var(--elloquist-space-2xl);
+}
+
+.hero-section__heading {
+  margin: 0 0 var(--elloquist-space-xl);
+  color: var(--page-heading);
+}
+
+.hero-section__description {
+  max-width: 600px;
+  margin: 0 auto var(--elloquist-space-2xl);
+  color: var(--page-text);
+  font-size: var(--elloquist-text-body);
+  font-family: var(--elloquist-font-body);
+  line-height: 1.7;
+}
+
+.hero-section__actions {
+  display: flex;
+  gap: var(--elloquist-space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-section__actions a {
+  text-decoration: none;
+}
+
+/* ============================================================================
+   ABOUT SECTION
+   ============================================================================ */
+
+.about-section {
+  padding: var(--elloquist-space-4xl) 0;
+  background-color: var(--page-bg-alt);
+}
+
+.about-section__heading {
+  margin: 0 0 var(--elloquist-space-lg);
+  color: var(--page-heading);
+}
+
+.about-section__divider {
+  width: 64px;
+  margin: 0 0 var(--elloquist-space-2xl);
+}
+
+.about-section__content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.about-section__content p {
+  margin-bottom: var(--elloquist-space-xl);
+  color: var(--page-text);
+}
+
+.about-section__quote {
+  margin: var(--elloquist-space-2xl) 0;
+  padding-left: var(--elloquist-space-xl);
+  border-left: 3px solid var(--page-accent);
+  /* color intentionally omitted — inherits from .elloquist-pull-quote in design
+     system (botanical-green light / pale-gold dark via dark mode override) */
+}
+
+/* ============================================================================
+   VIDEO SECTION — intentionally dark in both light and dark mode
+   Uses botanical-green bg in light mode; deeper in dark mode.
+   Pale gold is always correct here (dark background rule).
+   ============================================================================ */
+
+.video-section {
+  padding: var(--elloquist-space-4xl) 0;
+  background-color: var(--elloquist-botanical-green);
+  color: var(--elloquist-white);
+}
+
+.video-section__header {
+  text-align: center;
+  margin-bottom: var(--elloquist-space-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--elloquist-space-md);
+}
+
+.video-section__heading {
+  color: var(--elloquist-white);
+  margin: 0;
+}
+
+.video-section__description {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 520px;
+  margin: 0 auto;
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body);
+  line-height: 1.7;
+}
+
+.video-placeholder {
+  max-width: 680px;
+  margin: 0 auto var(--elloquist-space-3xl);
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(240, 200, 74, 0.35);
+  border-radius: var(--elloquist-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.video-placeholder__inner {
+  text-align: center;
+  color: var(--elloquist-pale-gold);
+}
+
+.video-placeholder__icon {
+  margin-bottom: var(--elloquist-space-md);
+}
+
+.video-placeholder__label {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-label);
+  font-weight: var(--elloquist-weight-regular);
+  letter-spacing: var(--elloquist-spacing-label);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72); /* 4.6:1+ against composited dark-green surface (WCAG AA) */
+  margin: 0;
+}
+
+.video-section__cta {
+  text-align: center;
+}
+
+/* Secondary button on botanical-green background.
+   Text: white (7.51:1 on #2C5F2E — passes AA).
+   Pale gold (#F0C84A) on #2C5F2E = 4.18:1 — fails AA for normal text at 14px.
+   Border stays pale gold: 4.18:1 passes the 3:1 non-text contrast minimum (SC 1.4.11). */
+.video-section .elloquist-btn-secondary {
+  color: var(--elloquist-white);
+  border-color: var(--elloquist-pale-gold);
+  background-color: transparent;
+}
+
+.video-section .elloquist-btn-secondary:hover {
+  background-color: rgba(240, 200, 74, 0.12);
+  color: var(--elloquist-white);
+}
+
+/* Focus ring on botanical-green background: rich gold (#8B6914) = 1.44:1 — fails SC 1.4.11.
+   Override to white (7.51:1 on botanical green) for this section. */
+.video-section :focus-visible {
+  outline-color: var(--elloquist-white);
+}
+
+/* ============================================================================
+   EXPLORE SECTION
+   ============================================================================ */
+
+.explore-section {
+  padding: var(--elloquist-space-4xl) 0;
+  background-color: var(--page-bg);
+}
+
+.explore-section__heading {
+  margin: 0 0 var(--elloquist-space-lg);
+  color: var(--page-heading);
+}
+
+.explore-section__divider {
+  width: 64px;
+  margin: 0 0 var(--elloquist-space-2xl);
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--elloquist-space-xl);
+}
+
+.explore-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--elloquist-space-md);
+  background-color: var(--page-surface);
+  border-color: var(--page-border);
+  padding: var(--elloquist-space-xl);
+  /* shadow lifts white card off cream background (1.05:1 bg contrast alone is insufficient) */
+  box-shadow: 0 2px 12px rgba(44, 95, 46, 0.08), 0 1px 3px rgba(44, 95, 46, 0.06);
+}
+
+.explore-card .elloquist-card-title {
+  color: var(--page-heading);
+  margin-bottom: 0;
+}
+
+.explore-card p {
+  flex: 1;
+  color: var(--page-text);
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.explore-card a {
+  text-decoration: none;
+  align-self: flex-start;
+  margin-top: var(--elloquist-space-sm);
+}
+
+/* ============================================================================
+   FOOTER — always deep-forest (premium variation)
+   Pale gold is always correct here (dark background rule).
+   ============================================================================ */
+
+.site-footer {
+  background-color: var(--elloquist-deep-forest);
+  color: var(--elloquist-white);
+  padding: var(--elloquist-space-4xl) 0 var(--elloquist-space-2xl);
+  text-align: center;
+}
+
+.site-footer__logo {
+  margin-bottom: var(--elloquist-space-2xl);
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+}
+
+/* SVG inherits Cormorant Garamond from the page's already-loaded font.
+   Fluid width: fills the footer container on desktop, shrinks on mobile. */
+.site-footer__logo-svg {
+  display: block;
+  width: min(100%, 780px);
+  height: auto;
+}
+
+
+.site-footer__nav {
+  margin-bottom: var(--elloquist-space-xl);
+}
+
+.site-footer__nav-list {
+  display: flex;
+  gap: var(--elloquist-space-xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.site-footer__nav-link {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body-small);
+  letter-spacing: var(--elloquist-spacing-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--elloquist-transition-base);
+}
+
+.site-footer__nav-link:hover {
+  color: var(--elloquist-pale-gold);
+}
+
+/* Higher specificity (0,2,0) beats both base .elloquist-caption and dark mode override */
+.site-footer .elloquist-caption {
+  color: rgba(255, 255, 255, 0.62); /* ~5.1:1 on deep-forest #1A3A1A (WCAG AA) */
+}
+
+.site-footer__copyright {
+  margin: 0;
+}
+
+/* ============================================================================
+   DARK MODE — remap semantic page tokens + override design system classes
+   The video section and footer are always dark, so they don't change here.
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg:         var(--elloquist-deep-forest);
+    --page-bg-alt:     #0f2210;
+    --page-surface:    rgba(255, 255, 255, 0.05);
+    --page-text:       rgba(255, 255, 255, 0.88);
+    --page-heading:    var(--elloquist-white);
+    --page-accent:     var(--elloquist-pale-gold);
+    --page-border:     rgba(240, 200, 74, 0.18);
+    --page-nav-bg:     var(--elloquist-deep-forest);
+    --page-nav-text:   var(--elloquist-pale-gold);
+    --page-nav-border: rgba(240, 200, 74, 0.15);
+
+    /* Hero wordmark — reverse variation on dark background */
+    --hero-wordmark-color: var(--elloquist-white);
+    --hero-q-color:        var(--elloquist-pale-gold);
+    --hero-accent-color:   var(--elloquist-pale-gold);
+  }
+
+  /* Typography class color overrides for dark backgrounds */
+  .elloquist-display-xl,
+  .elloquist-display-lg,
+  .elloquist-display-md,
+  .elloquist-display-sm {
+    color: var(--elloquist-white);
+  }
+
+  .elloquist-tagline {
+    color: var(--elloquist-pale-gold);
+  }
+
+  .elloquist-body,
+  .elloquist-body-small {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .elloquist-pull-quote {
+    color: var(--elloquist-pale-gold);
+  }
+
+  .elloquist-caption {
+    color: rgba(255, 255, 255, 0.62); /* ~5.1:1 on deep-forest (WCAG AA) */
+  }
+
+  /* Footer logo uses .elloquist-logo-premium variation — colors already set correctly
+     by the design system; no dark-mode overrides needed for footer logo. */
+
+  .video-section .elloquist-display-lg {
+    color: var(--elloquist-white);
+  }
+
+  /* Dividers: use pale gold for brand accent on dark backgrounds */
+  .elloquist-divider-brand-light {
+    background-color: var(--elloquist-pale-gold);
+  }
+
+  /* Secondary button: use pale-gold variant on dark background */
+  .elloquist-btn-secondary {
+    color: var(--elloquist-pale-gold);
+    border-color: var(--elloquist-pale-gold);
+  }
+
+  .elloquist-btn-secondary:hover {
+    background-color: rgba(240, 200, 74, 0.1);
+    color: var(--elloquist-pale-gold);
+  }
+
+  /* Card border matches dark page-border token */
+  .elloquist-card {
+    border-color: var(--page-border);
+  }
+
+  /* Video section deepens slightly in dark mode */
+  .video-section {
+    background-color: #071508;
+  }
+}
+
+/* ============================================================================
+   SCROLL ANIMATIONS  (disabled when prefers-reduced-motion: reduce)
+   ============================================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity var(--elloquist-transition-slow) ease,
+      transform var(--elloquist-transition-slow) ease;
+  }
+
+  .fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-delay-1 { transition-delay: 100ms; }
+  .fade-in-delay-2 { transition-delay: 200ms; }
+  .fade-in-delay-3 { transition-delay: 300ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+}

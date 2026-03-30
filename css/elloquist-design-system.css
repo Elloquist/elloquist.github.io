@@ -8,10 +8,9 @@
 
 /* ============================================================================
    FONT IMPORTS
+   Fonts are loaded via <link> tags in HTML with preconnect hints for
+   better performance. @import here is intentionally omitted.
    ============================================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;300italic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500&display=swap');
 
 /* ============================================================================
    CSS CUSTOM PROPERTIES (DESIGN TOKENS)
@@ -27,7 +26,8 @@
   --elloquist-sage: #EAF2EA;
   --elloquist-white: #FFFFFF;
   --elloquist-charcoal: #2D2D2D;
-  
+  --elloquist-muted: #555F6B;       /* Muted text — captions, metadata. 5.35:1 on cream (AA) */
+
   /* Typography - Font Families */
   --elloquist-font-display: 'Cormorant Garamond', serif;
   --elloquist-font-headline: 'Fraunces', serif;
@@ -181,7 +181,7 @@
   font-weight: var(--elloquist-weight-regular);
   letter-spacing: var(--elloquist-spacing-caption);
   line-height: 1.5;
-  color: #6B7280;
+  color: var(--elloquist-muted);
 }
 
 /* Label - Arial Regular, Uppercase */
@@ -195,7 +195,7 @@
   color: var(--elloquist-charcoal);
 }
 
-/* Logo/Wordmark Style */
+/* Logo/Wordmark Style — standalone use */
 .elloquist-logo {
   font-family: var(--elloquist-font-display);
   font-weight: var(--elloquist-weight-light);
@@ -208,6 +208,26 @@
   color: var(--elloquist-rich-gold);
 }
 
+/* Wordmark — typography for use inside logo variation containers */
+.elloquist-wordmark {
+  display: block;
+  font-family: var(--elloquist-font-display);
+  font-weight: var(--elloquist-weight-light);
+  letter-spacing: var(--elloquist-spacing-logo);
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+/* Logo Rule — decorative line below wordmark; spans full lockup width */
+.elloquist-rule {
+  display: block;
+  border: none;
+  height: 2px;
+  width: 100%;
+  margin: var(--elloquist-space-xs) 0 0;
+}
+
 /* ============================================================================
    COMPONENT CLASSES
    ============================================================================ */
@@ -217,7 +237,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--elloquist-space-lg) var(--elloquist-space-xl);
+  padding: var(--elloquist-space-sm) var(--elloquist-space-xl);
   font-family: var(--elloquist-font-body);
   font-size: var(--elloquist-text-body-small);
   font-weight: var(--elloquist-weight-regular);
@@ -345,6 +365,14 @@
    LOGO VARIATIONS (FOR HTML/CSS IMPLEMENTATION)
    ============================================================================ */
 
+/* Logo variation containers — inline-block so .elloquist-rule spans wordmark width */
+.elloquist-logo-primary,
+.elloquist-logo-reverse,
+.elloquist-logo-dark,
+.elloquist-logo-premium {
+  display: inline-block;
+}
+
 /* Primary Logo - Cream Background */
 .elloquist-logo-primary {
   background-color: var(--elloquist-cream);
@@ -357,6 +385,10 @@
 
 .elloquist-logo-primary .elloquist-q-accent {
   color: var(--elloquist-rich-gold);
+}
+
+.elloquist-logo-primary .elloquist-rule {
+  background-color: var(--elloquist-rich-gold);
 }
 
 /* Reverse Logo - Green Background */
@@ -373,6 +405,10 @@
   color: var(--elloquist-pale-gold);
 }
 
+.elloquist-logo-reverse .elloquist-rule {
+  background-color: var(--elloquist-pale-gold);
+}
+
 /* Dark Logo - White Background */
 .elloquist-logo-dark {
   background-color: var(--elloquist-white);
@@ -387,7 +423,12 @@
   color: var(--elloquist-rich-gold);
 }
 
-/* Premium Logo - Deep Forest Background */
+.elloquist-logo-dark .elloquist-rule {
+  background-color: var(--elloquist-rich-gold);
+}
+
+/* Premium Logo - Deep Forest Background
+   Note: entire wordmark is Pale Gold — no green. Most elevated brand expression. */
 .elloquist-logo-premium {
   background-color: var(--elloquist-deep-forest);
   padding: var(--elloquist-space-xl);
@@ -401,6 +442,10 @@
   color: var(--elloquist-pale-gold);
 }
 
+.elloquist-logo-premium .elloquist-rule {
+  background-color: var(--elloquist-pale-gold);
+}
+
 /* ============================================================================
    WCAG ACCESSIBILITY COMPLIANCE
    ============================================================================ */
@@ -412,7 +457,7 @@
  * - Rich Gold #8B6914 on Cream #F8F5EF: 4.67:1 (AA)
  * - Rich Gold #8B6914 on White #FFFFFF: 5.09:1 (AA)
  * - White #FFFFFF on Botanical Green #2C5F2E: 7.54:1 (AAA)
- * - Pale Gold #F0C84A on Botanical Green #2C5F2E: 4.69:1 (AA)
+ * - Pale Gold #F0C84A on Botanical Green #2C5F2E: 4.18:1 (FAILS AA for normal text — do not use as text on this background)
  * - Pale Gold #F0C84A on Deep Forest #1A3A1A: 7.85:1 (AAA)
  * - Charcoal #2D2D2D on Cream #F8F5EF: 12.66:1 (AAA)
  */

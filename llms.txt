@@ -1,0 +1,25 @@
+# Elloquist
+
+> Where beauty and curiosity collide — exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.
+
+Elloquist is an educational content brand creating videos and tools that make complex ideas beautiful and accessible. Topics span epigenetics, houseplants, pop culture, anthropology, and the quiet wonder of everyday life. The guiding ethos: "Look Closer. Find It Fascinating."
+
+## Site
+
+- [Home](https://elloquist.com): Brand homepage — overview of Elloquist's mission, featured videos, and products
+
+## Products
+
+- [PlantCareAI](https://plantcareai.app): AI-powered plant care guidance app with personalized watering schedules, light requirements, and expert advice for every plant you own
+
+## Social & Content
+
+- [YouTube](https://www.youtube.com/@elloquist): Educational and entertaining videos on science, culture, memory, and the living world
+- [Instagram](https://www.instagram.com/elloquist): Visual content and behind-the-scenes
+- [TikTok](https://www.tiktok.com/@elloquist): Short-form educational videos
+- [Pinterest](https://www.pinterest.com/elloquist): Curated visual inspiration
+- [Medium](https://medium.com/@elloquist): Long-form writing and essays
+
+## Contact
+
+- Email: info@elloquist.com

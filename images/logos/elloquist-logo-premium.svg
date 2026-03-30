@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Elloquist — Premium Wordmark (no tagline)
+  Variation: Premium (deep-forest background)
+  Background: transparent — host element provides background
+  Font: Cormorant Garamond Light 300 (must be loaded by the host page)
+  Colors: Pale Gold #F0C84A (two-gold rule: pale gold on dark only)
+-->
+<svg viewBox="0 0 800 115" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-label="Elloquist">
+  <title>Elloquist</title>
+  <text x="400" y="78"
+        text-anchor="middle"
+        font-family="'Cormorant Garamond', serif"
+        font-size="72"
+        font-weight="300"
+        letter-spacing="10"
+        fill="#F0C84A">ELLOQUIST</text>
+  <rect x="115" y="102" width="570" height="1.5" fill="#F0C84A"/>
+</svg>
