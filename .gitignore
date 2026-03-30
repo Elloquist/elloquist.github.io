@@ -3,10 +3,10 @@
 # ========================================
 .vscode/
 .idea/
+.claude/
 .DS_Store
 Thumbs.db
 *.swp
-.claude/
 
 # ========================================
 # Design Specs and Notes
