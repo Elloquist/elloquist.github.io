@@ -251,7 +251,6 @@ img {
 }
 
 .about-section__divider {
-  width: 64px;
   margin: 0 0 var(--elloquist-space-2xl);
 }
 
@@ -379,7 +378,6 @@ img {
 }
 
 .explore-section__divider {
-  width: 64px;
   margin: 0 0 var(--elloquist-space-2xl);
 }
 
