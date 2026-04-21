@@ -307,35 +307,20 @@ img {
   line-height: 1.7;
 }
 
-.video-placeholder {
+.video-embed {
   max-width: 680px;
   margin: 0 auto var(--elloquist-space-3xl);
   aspect-ratio: 16 / 9;
-  border: 1px solid rgba(240, 200, 74, 0.35);
   border-radius: var(--elloquist-radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.18);
 }
 
-.video-placeholder__inner {
-  text-align: center;
-  color: var(--elloquist-pale-gold);
-}
-
-.video-placeholder__icon {
-  margin-bottom: var(--elloquist-space-md);
-}
-
-.video-placeholder__label {
-  font-family: var(--elloquist-font-body);
-  font-size: var(--elloquist-text-label);
-  font-weight: var(--elloquist-weight-regular);
-  letter-spacing: var(--elloquist-spacing-label);
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72); /* 4.6:1+ against composited dark-green surface (WCAG AA) */
-  margin: 0;
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 .video-section__cta {

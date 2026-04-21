@@ -22,7 +22,7 @@
     script-src  'self';
     img-src     'self' https:;
     connect-src 'none';
-    frame-src   'none';
+    frame-src   https://www.youtube-nocookie.com;
     object-src  'none';
     base-uri    'self';
     form-action 'self';
@@ -227,29 +227,24 @@
       </div>
     </section>
 
-    <!-- Featured Video Section (Coming Soon) -->
+    <!-- Featured Video Section -->
     <section id="videos" class="video-section" aria-labelledby="video-heading">
       <div class="section-container">
         <div class="video-section__header">
-          <span class="elloquist-badge elloquist-badge-premium-dark">Coming Soon</span>
           <h2 id="video-heading" class="elloquist-display-lg video-section__heading">Featured Videos</h2>
           <p class="video-section__description">
-            Our first videos are in production. Subscribe on YouTube so you don't miss the launch.
+            Look closer. Find it fascinating. New videos on science, culture, and the living world.
           </p>
         </div>
 
-        <div class="video-placeholder"
-             role="img"
-             aria-label="Video coming soon — subscribe on YouTube to be notified at launch">
-          <div class="video-placeholder__inner" aria-hidden="true">
-            <div class="video-placeholder__icon" aria-hidden="true">
-              <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
-                <circle cx="26" cy="26" r="24" stroke="currentColor" stroke-width="1" fill="none" opacity="0.35"/>
-                <polygon points="21,16 39,26 21,36" fill="currentColor" opacity="0.65"/>
-              </svg>
-            </div>
-            <p class="video-placeholder__label">First video dropping soon</p>
-          </div>
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/seXhv_BkZ48?si=1FxvuzxmUdmMbZeR"
+            title="What Your Houseplants Are Actually Doing to Your Brain"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
         </div>
 
         <div class="video-section__cta">
