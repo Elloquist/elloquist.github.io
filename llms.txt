@@ -6,7 +6,7 @@ Elloquist is an educational content brand creating videos and tools that make co
 
 ## Site
 
-- [Home](https://elloquist.com): Brand homepage: overview of Elloquist's mission, featured videos, and products
+- [Home](https://elloquist.com/): Brand homepage: overview of Elloquist's mission, featured videos, and products
 
 ## Products
 
