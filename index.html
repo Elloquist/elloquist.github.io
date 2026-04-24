@@ -21,7 +21,7 @@
     font-src    'self';
     script-src  'self';
     img-src     'self' https:;
-    connect-src 'none';
+    connect-src 'self';
     frame-src   https://www.youtube-nocookie.com;
     object-src  'none';
     base-uri    'self';
@@ -34,20 +34,25 @@
   <meta property="og:type"         content="website">
   <meta property="og:url"          content="https://elloquist.com">
   <meta property="og:title"        content="Elloquist | Where Eloquence Meets Curiosity">
-  <meta property="og:description"  content="Where beauty and curiosity collide — exploring epigenetics, houseplants, pop culture, and anthropology.">
+  <meta property="og:description"  content="Where beauty and curiosity collide, exploring epigenetics, houseplants, pop culture, and anthropology.">
   <meta property="og:site_name"    content="Elloquist">
   <meta property="og:image"        content="https://elloquist.com/images/elloquist-social-banner.png">
   <meta property="og:image:width"  content="2048">
   <meta property="og:image:height" content="1152">
-  <meta property="og:image:alt"    content="Elloquist wordmark on cream background — Where Eloquence Meets Curiosity">
+  <meta property="og:image:alt"    content="Elloquist wordmark on cream background, Where Eloquence Meets Curiosity">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:site"        content="@elloquist">
   <meta name="twitter:title"       content="Elloquist | Where Eloquence Meets Curiosity">
-  <meta name="twitter:description" content="Where beauty and curiosity collide — exploring epigenetics, houseplants, pop culture, and anthropology.">
+  <meta name="twitter:description" content="Where beauty and curiosity collide, exploring epigenetics, houseplants, pop culture, and anthropology.">
   <meta name="twitter:image"       content="https://elloquist.com/images/elloquist-social-banner.png">
-  <meta name="twitter:image:alt"   content="Elloquist wordmark on cream background — Where Eloquence Meets Curiosity">
+  <meta name="twitter:image:alt"   content="Elloquist wordmark on cream background, Where Eloquence Meets Curiosity">
+
+  <!-- Font preloads — tells the browser to fetch these before it parses the CSS.
+       crossorigin is required for font preloads even on same-origin resources. -->
+  <link rel="preload" href="fonts/cormorant-garamond-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fraunces-300-500.woff2"       as="font" type="font/woff2" crossorigin>
 
   <!-- Stylesheets — fonts are self-hosted; no external font requests -->
   <link rel="stylesheet" href="css/fonts.css">
@@ -56,6 +61,19 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://elloquist.com">
+
+  <!-- Identity assertions — used by Mastodon, IndieWeb, and AI crawlers for entity verification -->
+  <link rel="me" href="https://www.youtube.com/@elloquist">
+  <link rel="me" href="https://www.tiktok.com/@elloquist">
+  <link rel="me" href="https://www.instagram.com/elloquist/">
+  <link rel="me" href="https://x.com/elloquist">
+  <link rel="me" href="https://www.facebook.com/elloquist">
+  <link rel="me" href="https://www.linkedin.com/company/elloquist/">
+  <link rel="me" href="https://www.pinterest.com/elloquist/">
+  <link rel="me" href="https://www.reddit.com/user/elloquist/">
+  <link rel="me" href="https://elloquist.medium.com/">
+  <link rel="me" href="https://substack.com/@elloquist">
+  <link rel="me" href="https://audio.com/@elloquist">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1.0.0" sizes="96x96">
@@ -76,17 +94,31 @@
         "@type": "WebSite",
         "@id": "https://elloquist.com/#website",
         "name": "Elloquist",
-        "alternateName": "Elloquist — Where Eloquence Meets Curiosity",
+        "alternateName": "Elloquist: Where Eloquence Meets Curiosity",
         "url": "https://elloquist.com",
-        "description": "Where beauty and curiosity collide — exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.",
+        "description": "Where beauty and curiosity collide, exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.",
         "inLanguage": "en-US",
         "publisher": { "@id": "https://elloquist.com/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://elloquist.com/#person-ellen-hermance",
+        "name": "Ellen Hermance",
+        "url": "https://ehermance.com",
+        "sameAs": [
+          "https://ehermance.com",
+          "https://www.youtube.com/@elloquist",
+          "https://www.instagram.com/elloquist/",
+          "https://x.com/elloquist",
+          "https://www.linkedin.com/company/elloquist/"
+        ]
       },
       {
         "@type": "Organization",
         "@id": "https://elloquist.com/#organization",
         "name": "Elloquist",
         "legalName": "Elloquist LLC",
+        "founder": { "@id": "https://elloquist.com/#person-ellen-hermance" },
         "url": "https://elloquist.com",
         "logo": {
           "@type": "ImageObject",
@@ -95,7 +127,7 @@
           "contentUrl": "https://elloquist.com/images/elloquist-social-banner.png",
           "width": 2048,
           "height": 1152,
-          "caption": "Elloquist wordmark on cream background — Where Eloquence Meets Curiosity"
+          "caption": "Elloquist wordmark on cream background, Where Eloquence Meets Curiosity"
         },
         "image": { "@id": "https://elloquist.com/#logo" },
         "description": "Elloquist explores the science of living things, the stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life. Where eloquence meets curiosity.",
@@ -107,17 +139,70 @@
         },
         "sameAs": [
           "https://www.youtube.com/@elloquist",
-          "https://www.instagram.com/elloquist",
           "https://www.tiktok.com/@elloquist",
-          "https://twitter.com/elloquist",
+          "https://www.instagram.com/elloquist/",
           "https://x.com/elloquist",
           "https://www.facebook.com/elloquist",
-          "https://www.pinterest.com/elloquist",
-          "https://www.linkedin.com/company/elloquist",
-          "https://medium.com/@elloquist",
+          "https://www.linkedin.com/company/elloquist/",
+          "https://www.pinterest.com/elloquist/",
           "https://www.reddit.com/user/elloquist/",
+          "https://elloquist.medium.com/",
           "https://substack.com/@elloquist",
           "https://audio.com/@elloquist"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://elloquist.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Elloquist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elloquist is a science and culture media brand that explores the science of living things, the stories hidden in culture, music and memory, and the quiet wonder of a well-tended life. It publishes YouTube videos, newsletters, and essays, operated by Elloquist LLC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What topics does Elloquist cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elloquist covers four core areas: the science of living things (epigenetics, plant biology, and cell science); stories hidden in culture (anthropology, pop culture, and social history); music and memory (the neuroscience of sound and how music anchors experience in time); and the well-tended life (houseplants, biophilic design, and the science behind why living things improve wellbeing)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I watch Elloquist videos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elloquist videos are published on YouTube at https://www.youtube.com/@elloquist. New videos explore science, culture, memory, and the living world."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes Elloquist different from other science YouTube channels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elloquist bridges academic curiosity and everyday wonder, presenting complex scientific and cultural ideas through an eloquent, literary lens. Rather than focusing on a single discipline, it connects epigenetics, anthropology, botany, and pop culture into a unified curiosity-first perspective, making ideas feel not just understandable, but genuinely fascinating."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is Elloquist for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elloquist is for curious people who want science and culture explained beautifully: those drawn to houseplants, cultural history, biology, epigenetics, music, memory, and the hidden stories in everyday life."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I follow Elloquist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elloquist publishes across YouTube, TikTok, Instagram, X, Facebook, LinkedIn, Pinterest, Reddit, Medium, Substack, and Audio.com. The handle is @elloquist on most platforms."
+            }
+          }
         ]
       }
     ]
@@ -134,7 +219,7 @@
        ====================================================================== -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="/" class="site-header__logo-link" aria-label="Elloquist — return to homepage">
+      <a href="/" class="site-header__logo-link" aria-label="Return to Elloquist homepage">
         <img class="site-header__monogram"
              src="images/logos/elloquist-monogram.png"
              alt=""
@@ -145,6 +230,7 @@
       <nav class="site-nav" aria-label="Primary navigation">
         <ul class="site-nav__list" role="list">
           <li><a href="#about"    class="site-nav__link">About</a></li>
+          <li><a href="#topics"   class="site-nav__link">Topics</a></li>
           <li><a href="#videos"   class="site-nav__link">Videos</a></li>
           <li><a href="#explore" class="site-nav__link">Explore</a></li>
           <li><a href="#contact"  class="site-nav__link">Contact</a></li>
@@ -192,7 +278,7 @@
           Look Closer.<br>Find It Fascinating.
         </h1>
         <p class="hero-section__description fade-in fade-in-delay-2">
-          Elloquist is where beauty and curiosity collide — exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.
+          Elloquist is where beauty and curiosity collide, exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.
         </p>
         <div class="hero-section__actions fade-in fade-in-delay-3">
           <a href="https://www.youtube.com/@elloquist"
@@ -217,14 +303,48 @@
         <hr class="elloquist-divider elloquist-divider-brand-light about-section__divider" aria-hidden="true">
         <div class="about-section__content">
           <p class="elloquist-body fade-in">
-            From epigenetics to houseplants, from pop culture to anthropology — every piece of content is an invitation to look closer at the world around you and find it more fascinating than you expected.
+            Elloquist is a science and culture media brand founded by Ellen Hermance, publishing YouTube videos, newsletters on Substack, and essays on Medium. Operated by Elloquist LLC, the brand covers epigenetics, houseplant science, anthropology, pop culture, music, memory, and the everyday wonders of a well-tended life.
+          </p>
+          <p class="elloquist-body fade-in">
+            From epigenetics to houseplants, from pop culture to anthropology: every piece of content is an invitation to look closer at the world around you and find it more fascinating than you expected.
           </p>
           <blockquote class="elloquist-pull-quote about-section__quote fade-in">
             "The science of living things. The stories hidden in culture. The quiet wonder of a well-tended life."
           </blockquote>
           <p class="elloquist-body fade-in">
-            Elloquist bridges the gap between academic curiosity and everyday wonder, making complex ideas beautiful and accessible. Whether you're here for the plant science, the cultural deep-dives, or simply to see the world with fresh eyes — you're in the right place.
+            Elloquist bridges the gap between academic curiosity and everyday wonder, making complex ideas beautiful and accessible. Whether you're here for the plant science, the cultural deep-dives, or simply to see the world with fresh eyes, you're in the right place.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topics" class="topics-section" aria-labelledby="topics-heading">
+      <div class="section-container">
+        <h2 id="topics-heading" class="elloquist-display-md topics-section__heading fade-in">What Elloquist Explores</h2>
+        <hr class="elloquist-divider elloquist-divider-brand-light topics-section__divider" aria-hidden="true">
+        <div class="topics-grid">
+
+          <article class="topics-card fade-in" aria-labelledby="topic-science-title">
+            <h3 id="topic-science-title" class="topics-card__title">The Science of Living Things</h3>
+            <p>From epigenetics and cell biology to the hidden intelligence of plants: the living world is stranger and more beautiful than most textbooks let on. Each video unpacks a piece of biology that rewards a second look.</p>
+          </article>
+
+          <article class="topics-card fade-in fade-in-delay-1" aria-labelledby="topic-culture-title">
+            <h3 id="topic-culture-title" class="topics-card__title">Stories Hidden in Culture</h3>
+            <p>Anthropology, folklore, pop culture, and social history reveal why humans think and behave the way we do. Every tradition and trend has a deeper story. Elloquist finds it.</p>
+          </article>
+
+          <article class="topics-card fade-in fade-in-delay-2" aria-labelledby="topic-memory-title">
+            <h3 id="topic-memory-title" class="topics-card__title">Music, Memory &amp; the Mind</h3>
+            <p>Why does a song trigger such vivid memory? How does sound become emotionally anchored to a moment? The neuroscience and psychology behind our most distinctly human experiences.</p>
+          </article>
+
+          <article class="topics-card fade-in fade-in-delay-3" aria-labelledby="topic-life-title">
+            <h3 id="topic-life-title" class="topics-card__title">The Well-Tended Life</h3>
+            <p>Houseplants, biophilic design, slow living, and the science behind why surrounding yourself with living things genuinely changes how your brain functions and how you feel.</p>
+          </article>
+
         </div>
       </div>
     </section>
@@ -308,7 +428,7 @@
     <div class="section-container">
 
       <div class="site-footer__logo">
-        <a href="/" class="site-footer__logo-link" aria-label="Elloquist — return to homepage">
+        <a href="/" class="site-footer__logo-link" aria-label="Return to Elloquist homepage">
           <!-- Premium wordmark with tagline
                viewBox height: 165 accommodates 20-unit tagline baseline at y=148 + descender room
                Tagline font-size 20 → renders at ~19.5px at 780px CSS width (legible) -->
@@ -337,9 +457,13 @@
         </a>
       </div>
 
+      <!-- Social nav — links rendered by scripts.js from /data/social_links.json -->
+      <nav class="site-footer__social" aria-label="Elloquist on social media" id="footer-social-nav"></nav>
+
       <nav class="site-footer__nav" aria-label="Footer navigation">
         <ul class="site-footer__nav-list" role="list">
           <li><a href="#about"    class="site-footer__nav-link">About</a></li>
+          <li><a href="#topics"   class="site-footer__nav-link">Topics</a></li>
           <li><a href="#videos"   class="site-footer__nav-link">Videos</a></li>
           <li><a href="#explore" class="site-footer__nav-link">Explore</a></li>
           <li>

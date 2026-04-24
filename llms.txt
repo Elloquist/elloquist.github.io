@@ -1,12 +1,12 @@
 # Elloquist
 
-> Where beauty and curiosity collide — exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.
+> Where beauty and curiosity collide, exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.
 
 Elloquist is an educational content brand creating videos and tools that make complex ideas beautiful and accessible. Topics span epigenetics, houseplants, pop culture, anthropology, and the quiet wonder of everyday life. The guiding ethos: "Look Closer. Find It Fascinating."
 
 ## Site
 
-- [Home](https://elloquist.com): Brand homepage — overview of Elloquist's mission, featured videos, and products
+- [Home](https://elloquist.com): Brand homepage: overview of Elloquist's mission, featured videos, and products
 
 ## Products
 

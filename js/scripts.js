@@ -79,4 +79,43 @@
     });
   }
 
+  /* --------------------------------------------------------------------------
+     Social nav — fetch /data/social_links.json and render platform links.
+     Falls back silently; footer site nav still provides core navigation.
+  -------------------------------------------------------------------------- */
+
+  var socialNavEl = document.getElementById('footer-social-nav');
+
+  if (socialNavEl && typeof fetch !== 'undefined') {
+    fetch('/data/social_links.json')
+      .then(function (res) { return res.json(); })
+      .then(function (links) {
+        var label = document.createElement('p');
+        label.className = 'site-footer__social-label';
+        label.setAttribute('aria-hidden', 'true');
+        label.textContent = 'Follow Elloquist';
+
+        var list = document.createElement('ul');
+        list.className = 'site-footer__social-list';
+        list.setAttribute('role', 'list');
+
+        links.forEach(function (link) {
+          var li = document.createElement('li');
+          var a  = document.createElement('a');
+          a.href        = link.url;
+          a.className   = 'site-footer__social-link';
+          a.textContent = link.name;
+          a.rel         = 'noopener noreferrer me';
+          a.target      = '_blank';
+          a.setAttribute('aria-label', 'Elloquist on ' + link.name + ' (opens in new tab)');
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+
+        socialNavEl.appendChild(label);
+        socialNavEl.appendChild(list);
+      })
+      .catch(function () { /* silent — footer site nav still provides navigation */ });
+  }
+
 })();
