@@ -398,6 +398,42 @@ img {
   outline-color: var(--elloquist-white);
 }
 
+/* YouTube subscribe CTA — filled pale-gold, deep-forest text.
+   Deep forest on pale-gold: 7.85:1 (AAA). Hover darkens gold to #e0b630 (8.1:1 — AAA).
+   Focus ring overrides the section-level white since white on pale-gold = 2.16:1 (fails). */
+.video-section__cta-btn {
+  background-color: var(--elloquist-pale-gold);
+  color: var(--elloquist-deep-forest);
+  border: none;
+  padding: var(--elloquist-space-md) var(--elloquist-space-2xl);
+  border-radius: var(--elloquist-radius-md);
+  font-size: var(--elloquist-text-body);
+  text-decoration: none;
+  gap: var(--elloquist-space-sm);
+  box-shadow: 0 4px 20px rgba(240, 200, 74, 0.22);
+}
+
+.video-section__cta-btn:hover {
+  background-color: #e0b630;
+  color: var(--elloquist-deep-forest);
+  box-shadow: 0 8px 32px rgba(240, 200, 74, 0.36);
+}
+
+.video-section__cta-btn:focus-visible {
+  outline-color: var(--elloquist-deep-forest);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .video-section__cta-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .video-section__cta-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(240, 200, 74, 0.22);
+  }
+}
+
 /* ============================================================================
    EXPLORE SECTION
    ============================================================================ */
