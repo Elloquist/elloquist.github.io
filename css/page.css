@@ -386,10 +386,12 @@ img {
 
 .video-figure {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .video-caption {
-  margin-top: var(--elloquist-space-sm);
+  margin-top: var(--elloquist-space-xs);
   text-align: center;
   font-family: var(--elloquist-font-body);
   font-size: var(--elloquist-text-caption);
