@@ -2,24 +2,36 @@
 
 > Where beauty and curiosity collide, exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.
 
-Elloquist is an educational content brand creating videos and tools that make complex ideas beautiful and accessible. Topics span epigenetics, houseplants, pop culture, anthropology, and the quiet wonder of everyday life. The guiding ethos: "Look Closer. Find It Fascinating."
+Elloquist is a science and culture media brand founded by Ellen Hermance, publishing YouTube videos, newsletters on Substack, and essays on Medium. Operated by Elloquist LLC. The guiding ethos: "Look Closer. Find It Fascinating."
 
 ## Site
 
 - [Home](https://elloquist.com/): Brand homepage: overview of Elloquist's mission, featured videos, and products
 
+## Videos
+
+- [What Your Houseplants Are Actually Doing to Your Brain](https://www.youtube.com/watch?v=seXhv_BkZ48): The neuroscience behind how houseplants affect mood, cognition, and brain function. Published April 20, 2026.
+- [The DNA of Nostalgia: Why Music Takes You Back](https://www.youtube.com/watch?v=Bx-i3oeYQ60): The science of music-triggered memory and why certain songs transport you instantly to a specific moment in time. Published May 5, 2026.
+
+## Topics
+
+- The Science of Living Things: epigenetics, plant biology, cell science, and the hidden intelligence of living organisms
+- Stories Hidden in Culture: anthropology, folklore, pop culture, and social history
+- Music, Memory & the Mind: the neuroscience of sound and how music anchors experience in time
+- The Well-Tended Life: houseplants, biophilic design, slow living, and the science behind why living things improve wellbeing
+
 ## Products
 
-- [PlantCareAI](https://plantcareai.app): AI-powered plant care guidance app with personalized watering schedules, light requirements, and expert advice for every plant you own
+- [PlantCareAI](https://plantcareai.app): App built by Elloquist that uses your plant type, local weather, and AI to give personalized care advice, weather-aware reminders, and a full care history for every plant you own. Free to start.
 
 ## Social & Content
 
-- [YouTube](https://www.youtube.com/@elloquist): Educational and entertaining videos on science, culture, memory, and the living world
+- [YouTube](https://www.youtube.com/@elloquist): Videos on science, culture, memory, and the living world
 - [Instagram](https://www.instagram.com/elloquist): Visual content and behind-the-scenes
 - [TikTok](https://www.tiktok.com/@elloquist): Short-form educational videos
 - [Pinterest](https://www.pinterest.com/elloquist): Curated visual inspiration
 - [Substack](https://substack.com/@elloquist): Newsletter and long-form essays
-- [Medium](https://medium.com/@elloquist): Long-form writing and essays
+- [Medium](https://elloquist.medium.com/): Long-form writing and essays
 - [X / Twitter](https://x.com/elloquist): Short-form posts and updates
 - [Threads](https://www.threads.com/@elloquist): Short-form posts and community
 - [Facebook](https://www.facebook.com/elloquist): Community and brand updates

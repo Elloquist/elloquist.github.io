@@ -70,6 +70,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@elloquist" />
+    <meta name="twitter:creator" content="@elloquist" />
     <meta
       name="twitter:title"
       content="Elloquist | Where Eloquence Meets Curiosity"
@@ -158,7 +159,15 @@
             "url": "https://elloquist.com/",
             "description": "Where beauty and curiosity collide, exploring the science of living things, stories hidden in culture, music, and memory, and the quiet wonder of a well-tended life.",
             "inLanguage": "en-US",
-            "publisher": { "@id": "https://elloquist.com/#organization" }
+            "publisher": { "@id": "https://elloquist.com/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://elloquist.com/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
           },
           {
             "@type": "Person",
@@ -213,6 +222,30 @@
               "https://substack.com/@elloquist",
               "https://audio.com/@elloquist"
             ]
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://elloquist.com/#video-houseplants-brain",
+            "name": "What Your Houseplants Are Actually Doing to Your Brain",
+            "description": "The neuroscience behind how houseplants affect mood, cognition, and brain function. An Elloquist video exploring the science of living things.",
+            "thumbnailUrl": "https://i.ytimg.com/vi/seXhv_BkZ48/maxresdefault.jpg",
+            "uploadDate": "2026-04-20",
+            "duration": "PT10M43S",
+            "embedUrl": "https://www.youtube-nocookie.com/embed/seXhv_BkZ48",
+            "url": "https://www.youtube.com/watch?v=seXhv_BkZ48",
+            "publisher": { "@id": "https://elloquist.com/#organization" }
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://elloquist.com/#video-dna-nostalgia",
+            "name": "The DNA of Nostalgia: Why Music Takes You Back",
+            "description": "The science of music-triggered memory: why certain songs transport you instantly to a specific moment in time. An Elloquist video exploring music, memory, and the mind.",
+            "thumbnailUrl": "https://i.ytimg.com/vi/Bx-i3oeYQ60/maxresdefault.jpg",
+            "uploadDate": "2026-05-05",
+            "duration": "PT8M39S",
+            "embedUrl": "https://www.youtube-nocookie.com/embed/Bx-i3oeYQ60",
+            "url": "https://www.youtube.com/watch?v=Bx-i3oeYQ60",
+            "publisher": { "@id": "https://elloquist.com/#organization" }
           },
           {
             "@type": "FAQPage",
