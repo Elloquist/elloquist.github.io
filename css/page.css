@@ -517,6 +517,55 @@ img {
 }
 
 /* ============================================================================
+   FAQ SECTION
+   ============================================================================ */
+
+.faq-section {
+  padding: var(--elloquist-space-4xl) 0;
+  background-color: var(--page-bg-alt);
+}
+
+.faq-section__heading {
+  margin: 0 0 var(--elloquist-space-lg);
+  color: var(--page-heading);
+}
+
+.faq-section__divider {
+  margin: 0 0 var(--elloquist-space-2xl);
+}
+
+.faq-list {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--elloquist-space-xl);
+}
+
+.faq-item__question {
+  font-family: var(--elloquist-font-headline);
+  font-size: 20px;
+  font-weight: var(--elloquist-weight-regular);
+  color: var(--page-heading);
+  margin: 0 0 var(--elloquist-space-sm);
+}
+
+.faq-item__answer {
+  color: var(--page-text);
+  margin: 0;
+}
+
+.faq-item__answer a {
+  color: var(--page-text);
+  text-decoration: underline;
+}
+
+.faq-item__answer a:hover,
+.faq-item__answer a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+/* ============================================================================
    FOOTER — always deep-forest (premium variation)
    Pale gold is always correct here (dark background rule).
    ============================================================================ */
