@@ -399,15 +399,20 @@ img {
   line-height: 1.4;
 }
 
-/* Related-links card — 4th grid item, same footprint as a video-embed
-   (16:9 via .video-embed), balancing the odd 3-video count into a 2x2
-   grid. Text stays solid white rather than pale-gold: pale-gold on this
-   section's botanical-green background fails AA at normal text size
-   (see .video-section__cta-btn note above), so white + underline
-   carries the link affordance instead. */
+/* Related-links card: the 4th grid item, matching a video-embed's 16:9
+   footprint so 3 videos plus this card form a balanced 2x2 grid instead
+   of an odd row of 3. Text stays solid white rather than pale-gold:
+   pale-gold on this section's botanical-green background fails AA at
+   normal text size (see .video-section__cta-btn note above), so white
+   plus underline carries the link affordance instead.
+   Overrides .video-embed's fixed aspect-ratio/overflow-hidden, since
+   those are built for iframe video content. This card holds
+   variable-height text, which must never be clipped per WCAG 1.4.10
+   Reflow at narrow viewports or larger zoom/text-size settings. */
 .video-related-card {
+  aspect-ratio: auto;
+  overflow: visible;
   height: 100%;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -441,10 +446,8 @@ img {
   text-decoration: underline;
 }
 
-.video-related-card__list a:hover,
-.video-related-card__list a:focus-visible {
-  text-decoration-thickness: 2px;
-}
+/* Hover/focus underline-thickness rule for this link lives with
+   .faq-item__answer a's shared rule further down this file. */
 
 .video-section__cta {
   text-align: center;
@@ -607,8 +610,11 @@ img {
   text-decoration: underline;
 }
 
+/* Shared underline-emphasis on hover/focus for underlined inline links. */
 .faq-item__answer a:hover,
-.faq-item__answer a:focus-visible {
+.faq-item__answer a:focus-visible,
+.video-related-card__list a:hover,
+.video-related-card__list a:focus-visible {
   text-decoration-thickness: 2px;
 }
 
