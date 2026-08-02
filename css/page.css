@@ -359,7 +359,7 @@ img {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: var(--elloquist-space-xl);
   margin-bottom: var(--elloquist-space-3xl);
 }
@@ -399,40 +399,51 @@ img {
   line-height: 1.4;
 }
 
-/* Related-article links under a video caption. Text stays solid white
-   rather than pale-gold: pale-gold on this section's botanical-green
-   background fails AA at caption text size (see .video-section__cta-btn
-   note above), so white + underline carries the link affordance instead. */
-.video-related {
-  margin-top: var(--elloquist-space-sm);
+/* Related-links card — 4th grid item, same footprint as a video-embed
+   (16:9 via .video-embed), balancing the odd 3-video count into a 2x2
+   grid. Text stays solid white rather than pale-gold: pale-gold on this
+   section's botanical-green background fails AA at normal text size
+   (see .video-section__cta-btn note above), so white + underline
+   carries the link affordance instead. */
+.video-related-card {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--elloquist-space-md);
+  padding: var(--elloquist-space-lg);
   text-align: center;
-  font-family: var(--elloquist-font-body);
-  font-size: var(--elloquist-text-caption);
 }
 
-.video-related__label {
-  display: block;
-  margin-bottom: 2px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.video-related a {
+.video-related-card__title {
+  margin: 0;
+  font-family: var(--elloquist-font-headline);
+  font-size: 18px;
+  font-weight: var(--elloquist-weight-regular);
   color: var(--elloquist-white);
-  text-decoration: underline;
 }
 
-.video-related a:hover,
-.video-related a:focus-visible {
-  text-decoration-thickness: 2px;
-}
-
-.video-related__list {
+.video-related-card__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--elloquist-space-sm);
+}
+
+.video-related-card__list a {
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-body-small);
+  color: var(--elloquist-white);
+  text-decoration: underline;
+}
+
+.video-related-card__list a:hover,
+.video-related-card__list a:focus-visible {
+  text-decoration-thickness: 2px;
 }
 
 .video-section__cta {
