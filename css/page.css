@@ -359,7 +359,7 @@ img {
 
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--elloquist-space-xl);
   margin-bottom: var(--elloquist-space-3xl);
 }
@@ -397,6 +397,42 @@ img {
   font-size: var(--elloquist-text-caption);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.4;
+}
+
+/* Related-article links under a video caption. Text stays solid white
+   rather than pale-gold: pale-gold on this section's botanical-green
+   background fails AA at caption text size (see .video-section__cta-btn
+   note above), so white + underline carries the link affordance instead. */
+.video-related {
+  margin-top: var(--elloquist-space-sm);
+  text-align: center;
+  font-family: var(--elloquist-font-body);
+  font-size: var(--elloquist-text-caption);
+}
+
+.video-related__label {
+  display: block;
+  margin-bottom: 2px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.video-related a {
+  color: var(--elloquist-white);
+  text-decoration: underline;
+}
+
+.video-related a:hover,
+.video-related a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+.video-related__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .video-section__cta {
